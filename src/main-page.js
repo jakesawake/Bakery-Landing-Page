@@ -27,10 +27,10 @@ foodArr.push(lecheFlan);
 const displayItems = function () {
   const cell = document.createElement("div");
   cell.classList.add("food-container");
-  container.forEach((element) => {
-    if (typeof element === "string") {
+  for (let i = 0; i < foodArr.length; i++) {
+    if (foodArr[i] < foodArr.length) {
       container.appendChild(cell);
     }
-  });
+  }
 };
 displayItems();
