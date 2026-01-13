@@ -1,0 +1,12 @@
+body {
+  background-color: rgba(255, 253, 208, 1);
+}
+
+.nav-link {
+  color: brown;
+  text-decoration: none;
+}
+
+.food-container {
+  border-color: blue;
+}
