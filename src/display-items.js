@@ -12,10 +12,10 @@ export const displayItems = function () {
     cell.classList.add("food-container");
     const cellText = document.createElement("div");
     cellText.classList.add("food-container-text");
-    // const cellImg = element.foodImage(element.imgUrl, element.name);
     cell.textContent = element.foodName;
     container.appendChild(cell);
-    // cell.appendChild(cellImg);
+    const img = element.foodImage(element.imgUrl);
+    cell.appendChild(img);
     cellText.textContent = element.foodStr();
     cell.appendChild(cellText);
   });
