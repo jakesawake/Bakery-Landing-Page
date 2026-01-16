@@ -11,10 +11,11 @@ export class Food {
     this.foodPrice = price;
     this.imgUrl = imgUrl;
   }
-  foodImage(imgUrl, classListName) {
-    this.imgEl = document.createElement("img");
-    this.imgEl.src = imgUrl;
-    this.imgEl.classList.add(classListName);
+  foodImage(imgUrl) {
+    let imgEl = document.createElement("img");
+    imgEl.src = imgUrl;
+    imgEl.classList.add("container-img");
+    return imgEl;
   }
   foodStr() {
     return `${this.foodName} is a ${this.foodType} and is currently selling for ${this.foodPrice}`;
@@ -28,15 +29,30 @@ const lecheFlan = new Food(
   "$7.00",
   "https://cdn-icons-png.flaticon.com/128/8065/8065209.png",
 );
-const tteokbokki = new Food("Tteokbokki", "Meal", "$12.00");
-const sisig = new Food("Sisig", "Meal", "$5.00");
-const takoyaki = new Food("Takoyaki", "Snack", "$2.00");
+const tteokbokki = new Food(
+  "Tteokbokki",
+  "Meal",
+  "$12.00",
+  "https://cdn-icons-png.flaticon.com/512/6609/6609199.png",
+);
+const sisig = new Food(
+  "Sisig",
+  "Meal",
+  "$5.00",
+  "https://cdn-icons-png.flaticon.com/512/8065/8065273.png",
+);
+const takoyaki = new Food(
+  "Takoyaki",
+  "Snack",
+  "$2.00",
+  "data:image/png;base64,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",
+);
 
 // TODO: create function to create food objects
-const foodMaker = function (name, type, price) {
-  return new Food(`${name}`, `${type}`, `${price}`);
-};
-console.log(foodMaker("Tacos", "Meal", "$8.00"));
+// const foodMaker = function (name, type, price) {
+//   return new Food(`${name}`, `${type}`, `${price}`);
+// };
+// console.log(foodMaker("Tacos", "Meal", "$8.00"));
 
 // array pusher function
 // - takes any array and using rest parameter for foods
