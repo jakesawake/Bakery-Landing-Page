@@ -12,7 +12,21 @@ body {
 }
 
 .food-container {
+  display: grid;
+  grid-template-areas:
+    "food-name"
+    "food-image"
+    "food-description";
   border: 2px solid blue;
-  width: 20rem;
-  height: 20rem;
+  width: 10rem;
+  height: 10rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.container-img {
+  grid-area: food-image;
+  justify-self: center;
+  width: 2rem;
+  height: 2rem;
 }
